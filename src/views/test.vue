@@ -1,6 +1,12 @@
 <template>
-    <div>
-        <el-form ref="form" :model="form" label-width="80px" :rules="rules">
+    <div class="body">
+        <div class="github">
+            <a class="href" href="https://github.com/317607692/pb-project-1">
+                <span>https://github.com/317607692/pb-project-1</span>
+            </a>
+        </div>
+
+        <!-- <el-form ref="form" :model="form" label-width="80px" :rules="rules">
             <el-form-item prop="name" label="姓名">
                 <el-input
                     v-model="form.name"
@@ -11,11 +17,19 @@
             <el-form-item>
                 <el-button type="primary" @click="submitForm('form')">Submit</el-button>
             </el-form-item>
-        </el-form>
+        </el-form> -->
+        <div>
+            <test></test>
+        </div>
+        <div>
+            <game></game>
+        </div>
     </div>
 </template>
 
 <script>
+import test from "./test-object";
+import game from "@/components/game";
 export default {
     data() {
         return {
@@ -91,18 +105,39 @@ export default {
             },
         };
     },
+    components: {
+        test,
+        game,
+    },
     methods: {
-        submitForm(formName){
+        submitForm(formName) {
             this.$refs[formName].validate((valid) => {
-                if(valid){
+                if (valid) {
                     alert("submit");
-                }else{
+                } else {
                     alert("error");
                 }
             });
-        }
+        },
     },
 };
 </script>
-<style scoped>
+<style lang="less" scoped>
+.container {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background: #fff;
+}
+.github{
+    width: auto;
+    @height: 24px;
+    a.href{
+        display: block;
+        font-size: 14px;
+        line-height: @height;
+        height: @height;
+        text-align: center;
+        text-decoration: none;
+    }
+}
 </style>
