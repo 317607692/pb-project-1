@@ -8,18 +8,18 @@ export default {
     name: "fuck",
     props: {
         text: String,
-        default: fuck
-    }
-}
+        default: "fuck",
+    },
+};
 </script>
 
 <style lang="less">
-    .fuck{
-        display: block;
-        text-align: center;
-        span{
-            font-size: 20px;
-            line-height: 100px;
-        }
+.fuck {
+    display: block;
+    text-align: center;
+    span {
+        font-size: 20px;
+        line-height: 100px;
     }
+}
 </style>
