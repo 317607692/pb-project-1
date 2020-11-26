@@ -79,14 +79,15 @@ export default {
         return {};
     },
     props: {
-        width: 800,
+        width: 1200,
+        height: 400
     },
 };
 </script>
 <style lang="less" scoped>
 .game {
     display: block;
-    width: 800px;
-    height: 400px;
+    // width: 800px;
+    // height: 400px;
 }
 </style>

@@ -22,7 +22,7 @@
             <test></test>
         </div>
         <div>
-            <game></game>
+            <!-- <game></game> -->
         </div>
     </div>
 </template>
