@@ -2,7 +2,7 @@
     <object class="game">
         <param
             name="movie"
-            value="http://www.plazmaburst2.com/pb2/pb2_re34.swf?&amp;ver=1605515787&amp;l=&amp;p=&amp;a=&amp;default_server=0"
+            :value="gameUrl"
         />
         <param name="wmode" value="direct" />
         <param name="quality" value="high" />
@@ -58,12 +58,32 @@ export default {
     data() {
         return {
             gameUrl: "",
+            urlNet: "http://www.plazmaburst2.com/pb2/pb2_re34.swf?&amp;ver=1605515787&amp;l=&amp;p=&amp;a=&amp;default_server=0",
+            urlLocal: "http://120.79.94.65:9000/files/pb2_re34.swf"
         };
     },
     props: {
-        // width: 1200,
-        // height: 400,
+        type: {
+            type: String,
+            default: "local", // 加载时使用本地游戏资源还是pb2官网游戏资源 "local"/"net"
+        },
     },
+    methods: {
+        setGameUrl(){
+            if(this.type == "net"){
+                this.gameUrl = this.urlNet;
+            }else if(this.type == "local"){
+                this.gameUrl = this.urlLocal;
+            }
+        },
+        init(){
+            console.log(this.type);
+            this.setGameUrl();
+        }
+    },
+    mounted() {
+        this.init();
+    }
 };
 </script>
 <style lang="less" scoped>
