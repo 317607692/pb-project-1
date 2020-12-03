@@ -58,8 +58,9 @@ export default {
     data() {
         return {
             gameUrl: "",
-            urlNet: "http://www.plazmaburst2.com/pb2/pb2_re34.swf?&amp;ver=1605515787&amp;l=&amp;p=&amp;a=&amp;default_server=0",
-            urlLocal: "http://120.79.94.65:9000/files/pb2_re34.swf"
+            urlNet:
+                "http://www.plazmaburst2.com/pb2/pb2_re34.swf?&amp;ver=1605515787&amp;l=&amp;p=&amp;a=&amp;default_server=0",
+            urlLocal: "http://120.79.94.65:9000/files/pb2_re34.swf",
         };
     },
     props: {
@@ -69,21 +70,22 @@ export default {
         },
     },
     methods: {
-        setGameUrl(){
-            if(this.type == "net"){
+        setGameUrl() {
+            if (this.type == "net") {
                 this.gameUrl = this.urlNet;
-            }else if(this.type == "local"){
+            } else if (this.type == "local") {
                 this.gameUrl = this.urlLocal;
             }
         },
-        init(){
+        init() {
             console.log(this.type);
             this.setGameUrl();
-        }
+        },
     },
-    mounted() {
+    mounted() {},
+    created() {
         this.init();
-    }
+    },
 };
 </script>
 <style lang="less" scoped>
