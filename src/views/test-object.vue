@@ -1,14 +1,33 @@
 <template>
     <div>
-        <div class="fuck"><span>fuck</span></div>
+        <div class="fuck">
+            <span>{{ text }}</span>
+        </div>
     </div>
 </template>
 <script>
 export default {
     name: "fuck",
     props: {
-        text: String,
-        default: "fuck",
+        text: {
+            type: String,
+            default: "fuck",
+        },
+    },
+    data() {
+        return {
+            // content: this.text,
+            contnet: "",
+        };
+    },
+    methods: {
+        init() {
+            // this.content = this.text;
+            console.log("txt: ", this.text);
+        },
+    },
+    mounted() {
+        this.init();
     },
 };
 </script>
