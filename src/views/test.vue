@@ -19,7 +19,14 @@
             </el-form-item>
         </el-form> -->
         <div>
-            <test></test>
+            <test :fuck="test()"></test>
+        </div>
+        <div class="here">
+            <container>
+                <template>
+                    <game></game>
+                </template>
+            </container>
         </div>
         <div>
             <!-- <game></game> -->
@@ -28,7 +35,8 @@
 </template>
 
 <script>
-import test from "./test-object";
+import container from "@/components/container";
+import test from "@/components/test-object";
 import game from "@/components/game";
 export default {
     data() {
@@ -108,8 +116,12 @@ export default {
     components: {
         test,
         game,
+        container
     },
     methods: {
+        test(){
+            console.log("fuck: ");  
+        },
         submitForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
@@ -123,10 +135,13 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.container {
-    border: 1px solid #eee;
-    border-radius: 3px;
-    background: #fff;
+// .container {
+//     border: 1px solid #eee;
+//     border-radius: 3px;
+//     background: #fff;
+// }
+.here{
+    margin: 15px;
 }
 .github{
     width: auto;

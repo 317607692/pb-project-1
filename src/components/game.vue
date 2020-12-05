@@ -1,5 +1,5 @@
 <template>
-    <object class="game">
+    <object class="game" :width="setting.width" :height="setting.height">
         <param
             name="movie"
             :value="gameUrl"
@@ -61,6 +61,10 @@ export default {
             urlNet:
                 "http://www.plazmaburst2.com/pb2/pb2_re34.swf?&amp;ver=1605515787&amp;l=&amp;p=&amp;a=&amp;default_server=0",
             urlLocal: "http://120.79.94.65:9000/files/pb2_re34.swf",
+            setting:{
+                width: 800,
+                height: 400
+            }
         };
     },
     props: {
@@ -68,6 +72,14 @@ export default {
             type: String,
             default: "local", // 加载时使用本地游戏资源还是pb2官网游戏资源 "local"/"net"
         },
+        width: {
+            type: Number,
+            default: 800
+        },
+        height: {
+            type: Number,
+            default: 400
+        }
     },
     methods: {
         setGameUrl() {
@@ -80,6 +92,8 @@ export default {
         init() {
             console.log(this.type);
             this.setGameUrl();
+            this.setting.width = this.width;
+            this.setting.height = this.height;
         },
     },
     mounted() {},
