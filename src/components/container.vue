@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="title">
-            <span>{{ title }}</span>
+            <span>› {{ title }}</span>
         </div>
         <div class="content">
             <slot></slot>
@@ -17,7 +17,7 @@ export default {
         },
         titleText: {
             type: String,
-            default: "› Play Plazma Burst 2",
+            default: "Play Plazma Burst 2",
         },
     },
 
